@@ -9,8 +9,10 @@ import os
 prototxtPath = os.path.sep.join(["./face_detector", "deploy.prototxt"])
 weightsPath = os.path.sep.join(["./face_detector", "res10_300x300_ssd_iter_140000.caffemodel"])
 
+print("loading face_detector")
 faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
 
+print("loading mask_detector")
 maskNet = load_model("mask_detector.model")
 
 image=input("please input image path")
